@@ -1,0 +1,22 @@
+
+grpc:
+  port: 5000
+
+spring:
+  kafka:
+    client-id: chat
+    bootstrap-servers:
+      - kafka:9092
+    template:
+      default-topic: output-topic
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: all
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+kafka:
+  topic:
+    output: output-topic

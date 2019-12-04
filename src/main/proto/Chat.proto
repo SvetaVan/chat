@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+import "google/protobuf/timestamp.proto";
+
+package com.example.chat;
+
+message Empty {
+}
+
+message Room {
+  string name = 1;
+}
+
+enum MessageType {
+  JOIN = 0;
+  LEAVE = 1;
+  TEXT = 2;
+}
+
+message ChatMessage {
+  MessageType type = 1;
+  string message = 11;
+  string username = 12;
+}
+
+message ChatMessageFromServer {
+  google.protobuf.Timestamp timestamp = 1;
+  MessageType type = 2;
+
+  string message = 12;
+}
+
+service ChatStreamService {
+  rpc chat(stream ChatMessage) returns (stream ChatMessageFromServer);
+}

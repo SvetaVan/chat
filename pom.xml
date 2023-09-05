@@ -25,7 +25,7 @@
         <grpc-spring-boot-starter.version>3.0.0</grpc-spring-boot-starter.version>
         <os-maven-plugin.version>1.6.1</os-maven-plugin.version>
         <protobuf-maven-plugin.version>0.6.1</protobuf-maven-plugin.version>
-        <kafka.version>2.2.0</kafka.version>
+        <kafka.version>2.6.3</kafka.version>
     </properties>
 
     <dependencies>
